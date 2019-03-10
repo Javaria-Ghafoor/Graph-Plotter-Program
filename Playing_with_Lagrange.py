@@ -10,10 +10,10 @@ def Lagrange(points, x):
         def L(i):
             value = 1
             for j in range(n):
-                if i == j:   #to avoid 0/0 L-value
+                if i == j:   #to avoid undetermined L-value
                     continue
                 xj, yj = points[j]
-                value *= float(x - xj) / float(xi - xj)
+                value *= float(x - xj) / float(xi - xj)  #L-value
             return value
 
         sum += yi * L(i)
